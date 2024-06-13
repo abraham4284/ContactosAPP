@@ -43,10 +43,10 @@ export const AgregarContacto = ({dataToEdit,clearEdit}) => {
 
   return (
     <form action="" className="mt-5" onSubmit={handleSubmit}>
-      <input type="text" name="nombre" onChange={handleChange} placeholder="nombre" />
-      <input type="text" name="email" onChange={handleChange} placeholder="email" />
-      <input type="text" name="telefono" onChange={handleChange} placeholder="telefono" />
-      <button type="submit" className="btn btn-primary">Agregar</button>
+      <input type="text" name="nombre" value={form.nombre} onChange={handleChange} placeholder="nombre" />
+      <input type="text" name="email" value={form.email} onChange={handleChange} placeholder="email" />
+      <input type="text" name="telefono" value ={form.telefono} onChange={handleChange} placeholder="telefono" />
+      <button type="submit" className="btn btn-primary">{ dataToEdit ? "Editar" : "Agregar" }</button>
     </form>
   );
 };

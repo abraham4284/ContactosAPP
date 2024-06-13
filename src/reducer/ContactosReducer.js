@@ -1,4 +1,8 @@
 export const contactoReducer = (state, action) => {
+
+  console.log(state);
+  console.log(action.payload)
+
   switch (action.type) {
     case "Agregar_Contactos":
       const newContactos = [...state.contactos, action.payload];
@@ -9,8 +13,8 @@ export const contactoReducer = (state, action) => {
       };
 
     case "Editar_Contacto":
-      const updateContacto = state.contatos.map((contacto) =>
-        contacto.id === action.payload ? { ...action.payload } : contacto
+      const updateContacto = state.contactos.map((contacto) =>
+        contacto.id === action.payload.id ? { ...action.payload } : contacto
       );
       localStorage.setItem("contactos", JSON.stringify(updateContacto));
       return {
