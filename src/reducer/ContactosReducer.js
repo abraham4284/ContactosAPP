@@ -1,7 +1,5 @@
 export const contactoReducer = (state, action) => {
 
-  console.log(state);
-  console.log(action.payload)
 
   switch (action.type) {
     case "Agregar_Contactos":
